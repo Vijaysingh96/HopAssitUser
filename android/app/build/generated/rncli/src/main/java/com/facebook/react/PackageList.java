@@ -10,7 +10,17 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+import com.hopassituser.BuildConfig;
+import com.hopassituser.R;
 
+// @react-native-community/geolocation
+import com.reactnativecommunity.geolocation.GeolocationPackage;
+// @react-native-community/viewpager
+import com.reactnativecommunity.viewpager.RNCViewPagerPackage;
+// react-native-image-picker
+import com.imagepicker.ImagePickerPackage;
+// react-native-maps
+import com.airbnb.android.react.maps.MapsPackage;
 
 public class PackageList {
   private Application application;
@@ -43,7 +53,11 @@ public class PackageList {
 
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
-      new MainReactPackage()
+      new MainReactPackage(),
+      new GeolocationPackage(),
+      new RNCViewPagerPackage(),
+      new ImagePickerPackage(),
+      new MapsPackage()
     ));
   }
 }
