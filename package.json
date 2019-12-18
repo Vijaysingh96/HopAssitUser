@@ -19,12 +19,14 @@
     "react-native-best-viewpager": "^1.0.1",
     "react-native-elements": "^1.2.7",
     "react-native-image-picker": "^1.1.0",
+    "react-native-indicator": "^1.0.0",
     "react-native-maps": "^0.26.1",
     "react-native-modal-datetime-picker": "^7.6.1",
     "react-native-raw-bottom-sheet": "^2.0.6",
     "react-native-router-flux": "^4.0.6",
     "react-native-super-grid": "^3.1.1",
     "react-native-viewpager": "^0.2.13",
+    "react-native-whc-loading": "^1.0.3",
     "rn-viewpager": "^1.2.9"
   },
   "devDependencies": {

@@ -35,13 +35,13 @@ export default class login extends React.Component {
 
                         <View style={{ margin: 20, width: '90%' }}>
 
-                            <View style={{ width: '100%', height: 45, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.email_address_text}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.password_text}
                                     secureTextEntry={true}
                                     style={{ padding: 10 }}>

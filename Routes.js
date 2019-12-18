@@ -22,6 +22,7 @@ import Profile from './screens/profile'
 import EditProfile from './screens/editprofile'
 import History from './screens/historys'
 import InterventionDetails from './screens/interventionDetails'
+import Notifiaction from './screens/notification'
 
 
 _backAndroidHandler = () => {
@@ -60,6 +61,7 @@ const Routes = () => (
     <Scene key="EditProfile" component={EditProfile} left={()=>null} hideNavBar />
     <Scene key="History" component={History} left={()=>null} hideNavBar />
     <Scene key="InterventionDetails" component={InterventionDetails} left={()=>null} hideNavBar />
+    <Scene key="Notifiaction" component={Notifiaction} left={()=>null} hideNavBar />
    </Stack>
   </Router>
 );

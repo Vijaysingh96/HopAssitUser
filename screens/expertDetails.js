@@ -75,19 +75,22 @@ export default class expertDetails extends React.Component {
 
                         <View style={{ width: '95%', marginTop: 30, }}>
                             <Text style={{ fontSize: 16, padding: 10 }}>{Strings.descripation_Personelle_text}</Text>
-                            <View style={{ width: '95%', backgroundColor: 'white', borderRadius: 10, marginLeft: 10 }}>
+                            <Card style={{ width: '95%', backgroundColor: 'white', borderRadius: 10, marginLeft: 10 }}>
                                 <Text style={{ padding: 10 }}>{Strings.lorem_dolor_text}</Text>
-                            </View>
+                            </Card>
                         </View>
 
 
                         <View style={{ width: '95%', marginTop: 30, flexDirection: 'row', marginBottom: 50 }}>
-                            <View style={{ width: '50%', alignItems: 'center' }}>
-                                <TouchableOpacity onPress={()=>Actions.push("Rating")} style={{ width: '90%', height: 40, borderRadius: 10, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
+                            <View style={{ width: '50%', alignItems: 'center',justifyContent:'center' }}>
+                                <Card style={{ width: '90%', height: 40, borderRadius: 10, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
+                                <TouchableOpacity onPress={()=>Actions.push("Rating")} style={{ width: '100%', height: 40,borderRadius: 10,  alignItems: 'center', justifyContent: 'center',backgroundColor:'white' }}>
                                     <Text style={{ padding: 10, color: Strings.color_green_code }}>{Strings.Retour_text}</Text>
                                 </TouchableOpacity>
+                                </Card>
+                              
                             </View>
-                            <View style={{ width: '50%', alignItems: 'center' }}>
+                            <View style={{ width: '50%', alignItems: 'center',justifyContent:'center' }}>
                                 <TouchableOpacity onPress={() => this.ConfirmRBSheet.open()} style={{ width: '90%', height: 40, borderRadius: 10, backgroundColor: Strings.color_green_code, alignItems: 'center', justifyContent: 'center' }}>
                                     <Text style={{ padding: 10, color: 'white' }}>{Strings.selectionnerr_text}</Text>
 
@@ -113,7 +116,9 @@ export default class expertDetails extends React.Component {
                         <View style={{ flexDirection: 'column', width: '90%', height: '100%', borderRadius: 10, alignItems: 'center', justifyContent: 'center' }}>
                             <View style={{ width: '90%', height: 350, backgroundColor: 'white', borderRadius: 10, alignItems: 'center' }}>
                                 <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 20, padding: 10, textAlign: 'center' }}>{Strings.voter_command_text}</Text>
-                                <View style={{ width: '100%', borderWidth: 0.5, borderColor: 'black', marginTop: 10 }}></View>
+                                <Image source={require("../assets/line.png")}
+                                        style={{ width:'100%', height:10, marginTop: 10}}
+                                        resizeMode="contain" /> 
 
                                 <Text style={{ fontSize: 14, marginTop: 10, padding: 10, }}>{Strings.lorem_dolor_text}</Text>
 

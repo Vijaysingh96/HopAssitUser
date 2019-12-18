@@ -1,5 +1,6 @@
 const Application_Constant = {
     color_green_code:'#01A2C4',
+    light_color:'#CAD0D6',
     skipText:'Sauter',
     Reparer_devient_facile_Text:'Réparer devient facile',
     Lorem_Ipsum_text:'Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.',
@@ -123,8 +124,11 @@ const Application_Constant = {
     information_expert_text:'Information de la expert ',
     status_text:'Statut',
     numero_identification_text:'Numéro d\'identification du voyage',
-
-
+    temp_de_text:'Temps de travail',
+    category_text:'Categorie',
+    mots_text:'Mots cles',
+    commande_text:'Commande cree',
+    lis_tout_text:'Lis tout',
+    
 }
-
 export default Application_Constant;

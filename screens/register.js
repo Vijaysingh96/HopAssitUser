@@ -87,13 +87,13 @@ export default class register extends React.Component {
 
                         <View style={{ margin: 20, width: '90%' }}>
 
-                            <View style={{ width: '100%', height: 45, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.email_address_text}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor:Strings.light_color, borderRadius: 10 }}>
                                 <TextInput
                                     keyboardType="decimal-pad"
                                     placeholder={Strings.telephone_text}
@@ -101,39 +101,39 @@ export default class register extends React.Component {
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor:Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.password_text}
                                     secureTextEntry={true}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.Nom_de_familee}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
 
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.Addresse_text}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.Anniversarie_text}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.Homme_text}
                                     style={{ padding: 10 }}>
 
                                 </TextInput>
                             </View>
-                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: 'black', borderRadius: 10 }}>
+                            <View style={{ width: '100%', height: 45, marginTop: 20, borderWidth: 1, borderColor: Strings.light_color, borderRadius: 10 }}>
                                 <TextInput placeholder={Strings.Moyen_text}
                                     style={{ padding: 10 }}>
 
@@ -146,8 +146,8 @@ export default class register extends React.Component {
                                 </Text>
                                 <View style={{ flexDirection: 'row', marginTop: 10 }}>
                                     <View style={{ width: '50%', flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={() => this.setState({ Particulier_radio: true, Entreprise_radio: false, Clienten_radio: false })} style={{ width: '10%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ Particulier_radio: true, Entreprise_radio: false, Clienten_radio: false })} style={{width: '20%',height:30,alignItems:'center', justifyContent: 'center' }}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor:Strings.light_color }}>
                                                 {this.state.Particulier_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -161,8 +161,8 @@ export default class register extends React.Component {
                                         </View>
                                     </View>
                                     <View style={{ width: '50%', flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={() => this.setState({ Particulier_radio: false, Entreprise_radio: true, Clienten_radio: false })} style={{ width: '10%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ Particulier_radio: false, Entreprise_radio: true, Clienten_radio: false })} style={{ width: '20%',height:30,alignItems:'center', justifyContent: 'center' }}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor:Strings.light_color }}>
                                                 {this.state.Entreprise_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -179,8 +179,8 @@ export default class register extends React.Component {
 
                                 <View style={{ flexDirection: 'row', marginTop: 20 }}>
                                     <View style={{ width: '100%', flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={() => this.setState({ Particulier_radio: false, Entreprise_radio: false, Clienten_radio: true })} style={{ width: '5%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ Particulier_radio: false, Entreprise_radio: false, Clienten_radio: true })} style={{ width: '10%',height:30,alignItems:'center', justifyContent: 'center'}}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: Strings.light_color }}>
                                                 {this.state.Clienten_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -205,8 +205,8 @@ export default class register extends React.Component {
                                 <View style={{ flexDirection: 'row', width: '100%', marginTop: 20 }}>
                                     <View style={{ width: '50%', flexDirection: 'row' }}>
 
-                                        <TouchableOpacity onPress={() => this.setState({ child_radio: true, girl_radio: false, man_radio: false, people_radio: false, })} style={{ width: '10%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ child_radio: true, girl_radio: false, man_radio: false, people_radio: false, })} style={{width: '20%', justifyContent: 'center',alignItems:'center'}}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: Strings.light_color }}>
                                                 {this.state.child_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -223,8 +223,8 @@ export default class register extends React.Component {
 
                                     </View>
                                     <View style={{ width: '50%', flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={() => this.setState({ child_radio: false, girl_radio: true, man_radio: false, people_radio: false, })} style={{ width: '10%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ child_radio: false, girl_radio: true, man_radio: false, people_radio: false, })} style={{width: '20%', justifyContent: 'center',alignItems:'center'}}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: Strings.light_color }}>
                                                 {this.state.girl_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -245,8 +245,8 @@ export default class register extends React.Component {
                                 <View style={{ flexDirection: 'row', width: '100%', marginTop: 20 }}>
                                     <View style={{ width: '50%', flexDirection: 'row' }}>
 
-                                        <TouchableOpacity onPress={() => this.setState({ child_radio: false, girl_radio: false, man_radio: true, people_radio: false, })} style={{ width: '10%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ child_radio: false, girl_radio: false, man_radio: true, people_radio: false, })} style={{ width: '20%', justifyContent: 'center',alignItems:'center'}}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: Strings.light_color }}>
                                                 {this.state.man_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -263,8 +263,8 @@ export default class register extends React.Component {
 
                                     </View>
                                     <View style={{ width: '50%', flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={() => this.setState({ child_radio: false, girl_radio: false, man_radio: false, people_radio: true, })} style={{ width: '10%', justifyContent: 'center' }}>
-                                            <View style={{ width: 20, height: 20, borderWidth: 1, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                        <TouchableOpacity onPress={() => this.setState({ child_radio: false, girl_radio: false, man_radio: false, people_radio: true, })} style={{ width: '20%', justifyContent: 'center',alignItems:'center' }}>
+                                            <View style={{ width: 20, height: 20, borderWidth: 2, borderRadius: 20 / 2, alignItems: 'center', justifyContent: 'center', borderColor: Strings.light_color }}>
                                                 {this.state.people_radio === true && (<View style={{ width: 16, height: 16, borderRadius: 16 / 2, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                                     <Image source={require("../assets/right.png")}
                                                         style={{ width: 10, height: 10, }}
@@ -302,7 +302,7 @@ export default class register extends React.Component {
 
                             <View style={{marginTop: 10, flexDirection: 'row' }}>
                                 <TouchableOpacity onPress={() => this.setState({ checked: !this.state.checked })} style={{  width: '10%', justifyContent: 'center' }}>
-                                    <View style={{ width: 20, height: 20, borderWidth: 2, alignItems: 'center', justifyContent: 'center', borderColor: '#01A2C4' }}>
+                                    <View style={{ width: 20, height: 20, borderWidth: 2, alignItems: 'center', justifyContent: 'center', borderColor: Strings.light_color }}>
                                         {this.state.checked === true && (<View style={{ width: 20, height: 20, backgroundColor: '#01A2C4', alignItems: 'center', justifyContent: 'center' }}>
                                             <Image source={require("../assets/right.png")}
                                                 style={{ width: 10, height: 10, }}
@@ -318,7 +318,7 @@ export default class register extends React.Component {
 
 
                             <View style={{width:'100%',alignItems:'center',marginTop:30,marginBottom:30}}>
-                            {this.state.checked === false ?  <View style={{width:'50%',height:40,borderRadius:10,backgroundColor:'#CEFAFA',alignItems:'center',justifyContent:'center'}}>
+                            {this.state.checked === false ?  <View style={{width:'50%',height:40,borderRadius:10,backgroundColor:Strings.light_color,alignItems:'center',justifyContent:'center'}}>
                                 <Text style={{ fontSize: 16, color: 'white' }}>{Strings.Inscrire_Maintenant_text}</Text>
                                 </View> : <TouchableOpacity style={{width:'50%',height:40,borderRadius:10,backgroundColor:'#01A2C4',alignItems:'center',justifyContent:'center'}}>
                                 <Text style={{ fontSize: 16, color: 'white' }}>{Strings.Inscrire_Maintenant_text}</Text>

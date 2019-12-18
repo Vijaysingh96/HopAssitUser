@@ -65,12 +65,12 @@ export default class rating extends React.Component {
                        
 
                        
-                            <View style={{ width: '95%', backgroundColor: 'white', borderRadius: 10, marginLeft: 10,marginTop:20 }}>
+                            <Card style={{ width: '95%', backgroundColor: 'white', borderRadius: 10, marginLeft: 10,marginTop:20 }}>
                                <TextInput placeholder={Strings.ou_commenter_text}
                                multiline={true} style={{padding:10}}>
 
                                </TextInput>
-                            </View>
+                            </Card>
                    
 
                         <View style={{ width: '95%', marginTop: 40, flexDirection: 'row', marginBottom: 50 }}>

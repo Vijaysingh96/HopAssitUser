@@ -57,11 +57,121 @@ export default class interventionDetails extends React.Component {
                             color={Strings.color_green_code}
                             defaultRating={3}
                             size={15} />
+                        <View style={{width:'90%',marginTop:40}}>
+                            <Text style={{fontSize:16,fontWeight:'bold'}}>{Strings.information_text}</Text>
+                            <Card style={{width:'100%',backgroundColor:'white',borderRadius:10,flexDirection:'column',marginTop:15}}>
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.status_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"Finir le travail"}</Text>
+                                    </View>
+                                </View>
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.numero_identification_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"1234546"}</Text>
+                                    </View>
+                                </View>
 
-                      
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.temp_de_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"5:56PM,05-05-2018"}</Text>
+                                    </View>
+                                </View>
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.Addresse_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"23,simple streets,France simple streets"}</Text>
+                                    </View>
+                                </View>
 
-                       
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.category_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"PC,Windows"}</Text>
+                                    </View>
+                                </View>
 
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.mots_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"Text"}</Text>
+                                    </View>
+                                </View>
+
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.commande_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"05-05-2018,5:56PM"}</Text>
+                                    </View>
+                                </View>
+                            </Card>
+                        </View>
+
+                        <View style={{width:'90%',marginTop:50,marginBottom:100}}>
+                            <Text style={{fontSize:16,fontWeight:'bold'}}>{Strings.information_expert_text}</Text>
+                            <Card style={{width:'100%',backgroundColor:'white',borderRadius:10,flexDirection:'column',marginTop:10}}>
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{"Nom"}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"John Smith "}</Text>
+                                    </View>
+                                </View>
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{"Numéro du véhicule"}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"1234546"}</Text>
+                                    </View>
+                                </View>
+
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.travaux_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"5"}</Text>
+                                    </View>
+                                </View>
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{Strings.cout_text}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"€ 25  "}</Text>
+                                    </View>
+                                </View>
+
+                                <View style={{width:'100%',flexDirection:'row',margin:10}}>
+                                    <View style={{width:'50%'}}>
+                                        <Text style={{color:Strings.color_green_code}}>{"Experte"}</Text>
+                                    </View>
+                                    <View style={{width:'50%'}}>
+                                    <Text>{"PC,Windows"}</Text>
+                                    </View>
+                                </View>
+
+                             
+                            </Card>
+                        </View>
                     </View>
                 </ScrollView>
             </View>
