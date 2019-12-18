@@ -16,7 +16,7 @@ var dwidth = Dimensions.get("window").width, dheight = Dimensions.get("window").
 export default {
   containerWhite: {
   flex: 1,
-    backgroundColor:'white',
+    backgroundColor:'#e2e4e3',
     flexDirection:'column',
   },
  

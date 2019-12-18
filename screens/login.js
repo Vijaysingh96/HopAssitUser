@@ -49,7 +49,7 @@ export default class login extends React.Component {
                                 </TextInput>
                             </View>
 
-                            <TouchableOpacity  style={{ width: '100%', flexDirection: 'column', marginTop: 10 }}>
+                            <TouchableOpacity onPress={() => Actions.push("ExpertsList")}  style={{ width: '100%', flexDirection: 'column', marginTop: 10 }}>
 
                                 <Text style={{color: '#01A2C4', textAlign: 'right', marginRight:0, marginTop: 10, fontSize: 14, fontWeight: 'bold' }}>
                                     {Strings.forgotpassword_text}
