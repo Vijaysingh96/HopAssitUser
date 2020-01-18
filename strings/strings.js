@@ -1,7 +1,11 @@
 const Application_Constant = {
+    base_Url:'https://5e204e0ce31c6e0014c6060c.mockapi.io/api/',
     color_green_code:'#01A2C4',
     light_color:'#CAD0D6',
     skipText:'Sauter',
+    first_name:'Prénom',
+    user_id:'2',
+    ShouldemptyText: "Ne devrait pas être vide.",
     Reparer_devient_facile_Text:'Réparer devient facile',
     Lorem_Ipsum_text:'Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.',
     now_save_text:'Maintenant, économisez votre temps',

@@ -21,6 +21,10 @@ import com.reactnativecommunity.viewpager.RNCViewPagerPackage;
 import com.imagepicker.ImagePickerPackage;
 // react-native-maps
 import com.airbnb.android.react.maps.MapsPackage;
+// react-native-webview
+import com.reactnativecommunity.webview.RNCWebViewPackage;
+// rn-fetch-blob
+import com.RNFetchBlob.RNFetchBlobPackage;
 
 public class PackageList {
   private Application application;
@@ -57,7 +61,9 @@ public class PackageList {
       new GeolocationPackage(),
       new RNCViewPagerPackage(),
       new ImagePickerPackage(),
-      new MapsPackage()
+      new MapsPackage(),
+      new RNCWebViewPackage(),
+      new RNFetchBlobPackage()
     ));
   }
 }

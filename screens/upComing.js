@@ -18,7 +18,7 @@ export default class upComming extends React.Component {
         this.refs.loading2.show();
         setTimeout(() => {
             this.refs.loading2.close();
-        }, 2000);
+        }, 4000);
     }
 
 

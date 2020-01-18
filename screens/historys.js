@@ -12,12 +12,9 @@ export default class historys extends React.Component {
         super(props);
         this.state = {
 
-
         };
 
     }
-
- 
 
 
     render() {

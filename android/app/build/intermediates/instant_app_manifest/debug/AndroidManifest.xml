@@ -14,8 +14,19 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include required permissions for Google Maps API to run. -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Required to access Google Play Licensing -->
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <!--
+         Required to keep CPU alive while downloading files
+        (NOT to keep screen awake)
+    -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--
+         Required to poll the state of the network connection
+        and respond to changes
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to check whether Wi-Fi is enabled -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -50,6 +61,24 @@
 
         <provider
             android:name="com.imagepicker.FileProvider"
+            android:authorities="com.hopassituser.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <provider
+            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+            android:authorities="com.hopassituser.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+        <provider
+            android:name="com.RNFetchBlob.Utils.FileProvider"
             android:authorities="com.hopassituser.provider"
             android:exported="false"
             android:grantUriPermissions="true" >

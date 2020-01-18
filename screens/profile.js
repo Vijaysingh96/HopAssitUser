@@ -1,20 +1,78 @@
 import React from 'react';
-import { StatusBar, Button, FlatList, ScrollView, PixelRatio, TextInput, View, ImageBackground, Text, Image, Dimensions, TouchableOpacity, Linking, AsyncStorage } from 'react-native';
+import { StatusBar, Button, ActivityIndicator, FlatList, ScrollView, PixelRatio, TextInput, View, ImageBackground, Text, Image, Dimensions, TouchableOpacity, Linking, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import styles from "../styles/styles";
 import Strings from '../strings/strings'
 import { Card } from 'native-base';
 import { Rating, AirbnbRating } from 'react-native-elements';
+import PopupDialog, {
+    DialogTitle, DialogContent, DialogFooter, DialogButton, SlideAnimation, ScaleAnimation,
+} from 'react-native-popup-dialog';
+import Moment from 'moment';
 
 
 export default class profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
-
+            animating: false,
+            lodingDialog: false,
+            first_name: '',
+            last_name: '',
+            address: '',
+            email: '',
+            gender: '',
+            telephone: '',
+            Anniversarie: '',
+            avatar:'',
         };
 
+    }
+
+    componentDidMount() {
+        this.getProfileUser();
+    }
+
+    getProfileUser() {
+        
+            AsyncStorage.getItem("UserId")
+            .then(UserId => {
+                console.log("user id @:::"+UserId)
+                var userid = JSON.parse(UserId);
+                this.setState({ user_id: userid });
+                  
+        this.setState({
+            animating: true,
+            lodingDialog: true,
+        })
+        fetch(Strings.base_Url + "users/" + userid, {
+            method: 'GET',
+            headers: {
+                // 'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => response.json())
+            .then((responseData) => {
+
+                this.setState({
+                    animating: false,
+                    lodingDialog: false,
+                    first_name: responseData.firstname,
+                    last_name: responseData.lastname,
+                    address: responseData.firstname,
+                    email: responseData.email,
+                    gender: responseData.gender,
+                    telephone: responseData.telephone,
+                    Anniversarie:Moment(responseData.aniversary).format('DD-MM-YYYY'),
+                    avatar:responseData.avatar
+                })
+
+                console.log("responseData:::" + responseData.id)
+
+            }
+            )
+        })
     }
 
 
@@ -35,7 +93,7 @@ export default class profile extends React.Component {
                             style={{ width: 25, height: 25, }}
                             resizeMode="contain" />
                     </TouchableOpacity>
-                    
+
                 </View>
                 <ScrollView>
                     <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
@@ -50,45 +108,58 @@ export default class profile extends React.Component {
 
                         <View style={{ width: '80%', flexDirection: 'column', marginTop: 40 }}>
                             <Text style={{ fontSize: 16, paddingLeft: 10 }}>{Strings.prenom_text}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
-                                <Text style={{ fontSize: 16, padding: 10 }}>Jonh</Text>
-                            </View>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 16, padding: 10 }}>{this.state.first_name}</Text>
+                            </Card>
 
-                            <Text style={{ fontSize: 16, paddingLeft: 10 ,marginTop:30}}>{Strings.Nom_de_familee}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
-                                <Text style={{ fontSize: 16, padding: 10 }}>Smith</Text>
-                            </View>
+                            <Text style={{ fontSize: 16, paddingLeft: 10, marginTop: 30 }}>{Strings.Nom_de_familee}</Text>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 16, padding: 10 }}>{this.state.last_name}</Text>
+                            </Card>
 
-                            <Text style={{ fontSize: 16, paddingLeft: 10 ,marginTop:30}}>{Strings.Addresse_text}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
+                            <Text style={{ fontSize: 16, paddingLeft: 10, marginTop: 30 }}>{Strings.Addresse_text}</Text>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
                                 <Text style={{ fontSize: 16, padding: 10 }}>23, Simple France</Text>
-                            </View>
+                            </Card>
 
-                            <Text style={{ fontSize: 16, paddingLeft: 10 ,marginTop:30}}>{Strings.telephone_text}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
-                                <Text style={{ fontSize: 16, padding: 10 }}>+33 123456</Text>
-                            </View>
+                            <Text style={{ fontSize: 16, paddingLeft: 10, marginTop: 30 }}>{Strings.telephone_text}</Text>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 16, padding: 10 }}>{this.state.telephone}</Text>
+                            </Card>
 
-                            <Text style={{ fontSize: 16, paddingLeft: 10 ,marginTop:30}}>{Strings.email_address_text}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
-                                <Text style={{ fontSize: 16, padding: 10 }}>johnsmith@gmail.com</Text>
-                            </View>
+                            <Text style={{ fontSize: 16, paddingLeft: 10, marginTop: 30 }}>{Strings.email_address_text}</Text>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 16, padding: 10 }}>{this.state.email}</Text>
+                            </Card>
 
-                            <Text style={{ fontSize: 16, paddingLeft: 10 ,marginTop:30}}>{"Sexe"}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center'}}>
-                                <Text style={{ fontSize: 16, padding: 10 }}>Homme</Text>
-                            </View>
+                            <Text style={{ fontSize: 16, paddingLeft: 10, marginTop: 30 }}>{"Sexe"}</Text>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' }}>
+                                <Text style={{ fontSize: 16, padding: 10 }}>{this.state.gender}</Text>
+                            </Card>
 
-                            <Text style={{ fontSize: 16, paddingLeft: 10 ,marginTop:30}}>{Strings.Anniversarie_text}</Text>
-                            <View style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center' ,marginBottom:50}}>
-                                <Text style={{ fontSize: 16, padding: 10 }}>31/10/2019</Text>
-                            </View>
-
-                            
-
-                           
-
+                            <Text style={{ fontSize: 16, paddingLeft: 10, marginTop: 30 }}>{Strings.Anniversarie_text}</Text>
+                            <Card style={{ width: '100%', height: 40, borderRadius: 40, backgroundColor: 'white', marginTop: 10, justifyContent: 'center', marginBottom: 50 }}>
+                                <Text style={{ fontSize: 16, padding: 10 }}>{this.state.Anniversarie}</Text>
+                            </Card>
                         </View>
+
+                        <PopupDialog
+                            onHardwareBackPress={() => { this.setState({ lodingDialog: false }) }}
+                            width={0.3}
+                            visible={this.state.lodingDialog}
+                            dialogAnimation={new SlideAnimation({ slideFrom: 'bottom' })}>
+                            <DialogContent>
+                                <View style={{ alignItems: 'center', }}>
+                                    <ActivityIndicator
+                                        animating={this.state.animating}
+                                        style={[{ height: 10, marginBottom: 10, marginTop: 30, marginLeft: 20, marginRight: 20 }]}
+                                        color="#C00"
+                                        size="large"
+                                        hidesWhenStopped={true}
+                                    />
+                                </View>
+                            </DialogContent>
+                        </PopupDialog>
                     </View>
                 </ScrollView>
             </View>

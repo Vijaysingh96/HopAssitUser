@@ -1,8 +1,9 @@
 import React from 'react';
-import { StatusBar, ScrollView, View, ImageBackground, Text, Image, Dimensions, TouchableOpacity, Linking, AsyncStorage } from 'react-native';
+import {StatusBar, ScrollView, View, ImageBackground, Text, Image, Dimensions, TouchableOpacity, Linking, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import styles from "../styles/styles";
 import Strings from '../strings/strings'
+import {WebView} from 'react-native-webview';
 
 
 const { width, height } = Dimensions.get("window");
@@ -24,8 +25,13 @@ export default class signUp extends React.Component {
     }
     render() {
         return (
+           
+
             <View style={styles.containerWhite}>
+                  <WebView  source={{ uri: 'https://facebook.github.io/react-native/' }} />
                 <ScrollView>
+            <WebView style={{flex:1}} source={{ uri: 'https://facebook.github.io/react-native/' }} />
+
                     <View style={{ alignItems: 'center' }}>
                         <Image source={require("../assets/hop-assist-logo.png")}
                             style={{ width: '100%', height: 150, marginTop: 50 }}
@@ -35,7 +41,7 @@ export default class signUp extends React.Component {
                         <TouchableOpacity onPress={() => Actions.push("Login")} style={{ alignItems: 'center', justifyContent: 'center', width: '90%', height: 50, marginTop: 80, borderRadius: 10, backgroundColor: '#01A2C4' }}>
                             <Text style={{ fontSize: 16, color: 'white' }}>{Strings.mobile_login_text}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => Actions.push("CreateReservations")} style={{ alignItems: 'center', justifyContent: 'center', width: '90%', height: 50, marginTop: 30, borderRadius: 10, backgroundColor: '#01A2C4' }}>
+                        <TouchableOpacity onPress={() => Actions.push("Login")} style={{ alignItems: 'center', justifyContent: 'center', width: '90%', height: 50, marginTop: 30, borderRadius: 10, backgroundColor: '#01A2C4' }}>
                             <Text style={{ fontSize: 16, color: 'white' }}>{Strings.email_login_text}</Text>
 
                         </TouchableOpacity>

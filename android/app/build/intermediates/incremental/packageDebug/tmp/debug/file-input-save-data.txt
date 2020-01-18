@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Dec 12 13:28:31 IST 2019
+#Sat Jan 18 12:03:55 IST 2020
 64.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 64.baseType=DIRECTORY
 33.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
@@ -49,7 +49,7 @@
 44.baseType=DIRECTORY
 8.path=lib/armeabi-v7a/libglog_init.so
 62.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
-44.set=NATIVE_RESOURCE
+44.set=ASSET
 48.path=lib/armeabi-v7a/libreactnativejni.so
 40.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 43.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
@@ -67,7 +67,7 @@
 39.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 8.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 61.baseType=DIRECTORY
-45.path=ula.kml
+45.path=lib/x86_64/libfb.so
 59.path=lib/arm64-v8a/libjscexecutor.so
 8.set=NATIVE_RESOURCE
 14.set=NATIVE_RESOURCE
@@ -108,7 +108,7 @@ count=66
 3.path=lib/armeabi-v7a/libfolly_json.so
 28.set=NATIVE_RESOURCE
 34.path=lib/x86/libyoga.so
-45.set=ASSET
+45.set=NATIVE_RESOURCE
 62.set=NATIVE_RESOURCE
 18.set=NATIVE_RESOURCE
 13.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
@@ -127,7 +127,7 @@ count=66
 4.path=lib/arm64-v8a/libjsijniprofiler.so
 23.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 29.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
-44.path=lib/x86_64/libfb.so
+44.path=ula.kml
 37.baseType=DIRECTORY
 48.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 24.set=NATIVE_RESOURCE
@@ -169,7 +169,7 @@ count=66
 53.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 42.path=lib/armeabi-v7a/libyoga.so
 27.set=NATIVE_RESOURCE
-44.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
+44.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/merged_assets/debug/out
 19.set=NATIVE_RESOURCE
 6.baseType=DIRECTORY
 17.baseType=DIRECTORY
@@ -262,6 +262,6 @@ count=66
 10.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 12.path=lib/x86_64/libnative-imagetranscoder.so
 11.set=NATIVE_RESOURCE
-45.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/merged_assets/debug/out
+45.base=/home/groofl/VijaySingh/HopAssitUser/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 54.set=NATIVE_RESOURCE
 37.set=NATIVE_RESOURCE

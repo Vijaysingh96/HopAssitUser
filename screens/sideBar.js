@@ -78,7 +78,7 @@ class SideBar extends Component {
                                     <Text style={{ fontSize: 16, marginLeft: 10,  }}>{strings.notificatiin_text}</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={{ marginTop: 10, height: 40, marginLeft: 25, flexDirection: 'row', alignItems: 'center' }}>
+                                <TouchableOpacity onPress={() => Actions.push("ExpertsList")}  style={{ marginTop: 10, height: 40, marginLeft: 25, flexDirection: 'row', alignItems: 'center' }}>
                                     <Image source={require("../assets/rating.png")}
                                         style={{ width: 20, height: 20,resizeMode:'contain' }} ></Image>
                                     <Text style={{ fontSize: 16, marginLeft: 10,  }}>{strings.devenir_text}</Text>

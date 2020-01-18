@@ -1,9 +1,20 @@
 import React from 'react';
-import { StatusBar, View,ImageBackground, Text, Image, Dimensions, TouchableOpacity, Linking, AsyncStorage } from 'react-native';
+import {Platform,
+ 
+  SafeAreaView, StatusBar, View,ImageBackground, Text, Image, Dimensions, TouchableOpacity, Linking, AsyncStorage } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import styles from "../styles/styles";
+import MapView, { Marker, AnimatedRegion } from "react-native-maps";
+import PubNubReact from "pubnub-react";
+import Geolocation from '@react-native-community/geolocation';
+
 
 const { width, height } = Dimensions.get("window");
+const ASPECT_RATIO = width / height;
+const LATITUDE = 37.78825;
+const LONGITUDE = -122.4324;
+const LATITUDE_DELTA = 0.0922;
+const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 export default class Splash extends React.Component {
   // onRegionChange(region) {
@@ -16,8 +27,6 @@ export default class Splash extends React.Component {
       showUpdateDialog: false,
       isAuthorized: "1",
       userid: '',
-
-
     };
   }
 
@@ -30,11 +39,8 @@ export default class Splash extends React.Component {
           console.log("state userId============" + userid);
 
           if (userid != null && userid != "" && userid != undefined) {
-
              //Actions.push("Demo")
           } else {
-          
-
             Actions.push("ViewPager");
           }
 
@@ -57,99 +63,127 @@ export default class Splash extends React.Component {
   }
 }
 
+// export default class App extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-// import React, { Component } from 'react';
-// import {
-//     StyleSheet,
-//     Text,
-//     View,
-//     TouchableHighlight,
-// } from 'react-native';
+//     this.state = {
+//       latitude: LATITUDE,
+//       longitude: LONGITUDE,
+//       coordinate: new AnimatedRegion({
+//         latitude: LATITUDE,
+//         longitude: LONGITUDE,
+//         latitudeDelta: 0,
+//         longitudeDelta: 0
+//       })
+//     };
 
-// import Loading from 'react-native-whc-loading';
+//     this.pubnub = new PubNubReact({
+//       publishKey: "X",
+//       subscribeKey: "X"
+//     });
+//     this.pubnub.init(this);
+//   }
 
-// export default class App extends Component {
+//   componentDidMount() {
+//     this.watchLocation();
+//   }
+
+//   componentDidUpdate(prevProps, prevState) {
+//     if (this.props.latitude !== prevState.latitude) {
+//       this.pubnub.publish({
+//         message: {
+//           latitude: this.state.latitude,
+//           longitude: this.state.longitude
+//         },
+//         channel: "location"
+//       });
+//     }
+//   }
+
+//   componentWillUnmount() {
+//     Geolocation.clearWatch(this.watchID);
+//   }
+
+//   watchLocation = () => {
+//     const { coordinate } = this.state;
+
+//     this.watchID = Geolocation.watchPosition(
+//       position => {
+//         const { latitude, longitude } = position.coords;
+
+//         const newCoordinate = {
+//           latitude,
+//           longitude
+//         };
+
+//         if (Platform.OS === "android") {
+//           if (this.marker) {
+//             this.marker._component.animateMarkerToCoordinate(
+//               newCoordinate,
+//               500 // 500 is the duration to animate the marker
+//             );
+//           }
+//         } else {
+//           coordinate.timing(newCoordinate).start();
+//         }
+
+//         this.setState({
+//           latitude,
+//           longitude
+//         });
+//       },
+//       error => console.log(error),
+//       {
+//         enableHighAccuracy: true,
+//         timeout: 20000,
+//         maximumAge: 1000,
+//         distanceFilter: 10
+//       }
+//     );
+//   };
+
+//   getMapRegion = () => ({
+//     latitude: this.state.latitude,
+//     longitude: this.state.longitude,
+//     latitudeDelta: LATITUDE_DELTA,
+//     longitudeDelta: LONGITUDE_DELTA
+//   });
+
 //   render() {
 //     return (
-//       <View style={styles.container}>
-//           <TouchableHighlight
-//               style={[styles.button, {backgroundColor: 'red'}]}
-//               onPress={() => {
-//                 this.refs.loading.show();
-//                 setTimeout(() => {
-//                     this.refs.loading.close();
-//                 }, 2000);
-//               }} >
-//               <Text style={styles.text}>loading style 1</Text>
-//           </TouchableHighlight>
-//           <TouchableHighlight
-//               style={[styles.button, {backgroundColor: 'gray'}]}
-//               onPress={() => {
-//                   this.refs.loading2.show();
-//                   setTimeout(() => {
-//                       this.refs.loading2.close();
-//                   }, 2000);
-//               }}>
-//               <Text style={styles.text}>loading style 2</Text>
-//           </TouchableHighlight>
-//           <TouchableHighlight
-//               style={[styles.button, {backgroundColor: '#13227a'}]}
-//               onPress={() => {
-//                   this.refs.loading3.show();
-//                   setTimeout(() => {
-//                       this.refs.loading3.close();
-//                   }, 2000);
-//               }} >
-//               <Text style={styles.text}>loading style 3</Text>
-//           </TouchableHighlight>
-//           <TouchableHighlight
-//               style={[styles.button, {backgroundColor: '#1296db'}]}
-//               onPress={() => {
-//                   this.refs.loading4.show();
-//                   setTimeout(() => {
-//                       this.refs.loading4.close();
-//                   }, 2000); }}>
-//               <Text style={styles.text}>loading style 4</Text>
-//           </TouchableHighlight>
-//           <Loading
-//                     ref={"loading"}
-//                     image={require("../assets/spinner-of-dots.png")}
-//                     backgroundColor='#ffffffF2'
-//                     borderRadius={5}
-//                     size={70}
-//                     imageSize={40}
-//                     indicatorColor='gray'
-//                     easing={Loading.EasingType.ease}
-//                 />
-//           <Loading ref={'loading1'}/>
-//           <Loading ref={'loading2'}
-//                    image={require("../assets/spinner-of-dots.png")}/>
-//           <Loading ref={'loading3'}
-//                    image={require("../assets/spinner-of-dots.png")}
-//                    easing={Loading.EasingType.linear}/>
-//           <Loading ref={'loading4'}
-//                    backgroundColor={'#00000096'}
-//                    indicatorColor={'#fff'}/>
-//       </View>
+//       <SafeAreaView style={{ flex: 1 }}>
+//         <View style={{
+    
+//     position:'absolute',
+//     justifyContent: "flex-end",
+//     alignItems: "center"
+//   }}>
+//           <MapView
+//             style={ {
+//               position:'absolute',
+//             }}
+//             showUserLocation
+//             followUserLocation
+//             loadingEnabled
+//             region={this.getMapRegion()}
+//           >
+//             <Marker.Animated
+//               ref={marker => {
+//                 this.marker = marker;
+//               }}
+//               coordinate={this.state.coordinate}
+//             />
+//           </MapView>
+//         </View>
+//       </SafeAreaView>
 //     );
 //   }
 // }
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         flexDirection: 'column',
-//         justifyContent: 'space-around',
-//         padding:30,
-//     },
-//     button: {
-//         height: 50,
-//         justifyContent:'center',
-//         alignItems:'center',
-//     },
-//     text: {
-//         color: '#fff',
-//         fontSize: 18,
-//     }
-// });
+
+
+
+
+
       
